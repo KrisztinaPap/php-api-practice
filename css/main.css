@@ -1,0 +1,48 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans&display=swap');
+
+html {
+    background-color: cornflowerblue;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+.content-area {
+    background-color: cornsilk;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+ul {
+    margin: 1rem;
+}
+
+li {
+    list-style-type: square;
+    padding: 0.2rem;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Media queries */
+@media only screen and (min-width: 600px) {
+    .content-area {
+        max-width: 500px;
+        margin: auto;
+    }
+}
