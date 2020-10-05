@@ -18,8 +18,17 @@ include './templates/header.php';
 
 <ul>
     <?php
-    // @link https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview
-    $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs/autocomplete?contains={$_GET['keyword']}" );
+
+    if ( !empty($_GET['keyword'] ))
+    {
+        // @link https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview
+        $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs/autocomplete?contains={$_GET['keyword']}" );
+    }
+    else
+    {
+        $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs/autocomplete?contains=\"software\"" );
+    }
+   
 
     if ( $skillsAPIResponse )
     {
