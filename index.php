@@ -1,5 +1,6 @@
 <?php
 include './templates/header.php';
+include_once './include/validator.php'
 
 ?>
 
@@ -23,12 +24,11 @@ include './templates/header.php';
     {
         // @link https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview
         $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs/autocomplete?contains={$_GET['keyword']}" );
-    }
+    } 
     else
     {
-        $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs/autocomplete?contains=\"software\"" );
-    }
-   
+        $skillsAPIResponse = file_get_contents( "http://api.dataatwork.org/v1/jobs" );
+    }  
 
     if ( $skillsAPIResponse )
     {
@@ -54,7 +54,7 @@ include './templates/header.php';
     } 
     else
     {
-        echo "ERROR: Unable to get API response.";
+        echo "No matches found.";
     }
 
     ?>
