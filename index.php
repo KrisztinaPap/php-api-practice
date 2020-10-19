@@ -1,6 +1,5 @@
 <?php
 include './templates/header.php';
-include_once './include/validator.php'
 
 ?>
 
